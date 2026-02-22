@@ -20,7 +20,6 @@ export function validateIdentifier(identifier: string): string {
 
 /**
  * Validates a search query string.
- * Does NOT need to sanitize for shell injection because we use execFile (no shell).
  */
 export function validateQuery(query: string): string {
   const trimmed = query.trim();
