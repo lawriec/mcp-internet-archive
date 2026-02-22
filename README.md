@@ -19,8 +19,20 @@ ia --version   # verify installation
 
 ## Installation
 
+### Install from GitHub (recommended)
+
+No need to clone — install directly and use with `npx`:
+
 ```bash
-git clone https://github.com/youruser/mcp-internet-archive.git
+npm install -g github:lawriec/mcp-internet-archive
+```
+
+Or without installing globally, just reference it in your Claude config (see below).
+
+### Install from source
+
+```bash
+git clone https://github.com/lawriec/mcp-internet-archive.git
 cd mcp-internet-archive
 npm install
 npm run build
@@ -29,6 +41,21 @@ npm run build
 ## Claude Desktop Configuration
 
 Add to your Claude Desktop config (`%APPDATA%\Claude\claude_desktop_config.json` on Windows, `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+
+**Using npx (no clone needed):**
+
+```json
+{
+  "mcpServers": {
+    "internet-archive": {
+      "command": "npx",
+      "args": ["-y", "github:lawriec/mcp-internet-archive"]
+    }
+  }
+}
+```
+
+**Using a local clone:**
 
 ```json
 {
